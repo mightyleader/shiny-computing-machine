@@ -8,14 +8,17 @@
 import Foundation
 
 let args = CommandLine.arguments
-print("You sent me \(args.count) thing\(args.count == 1 ? "" : "s")")
+let iterations = 10000
 
 if args.count == 2 && args[1] == "help" {
     help()
 } else if args.count < 3 {
     reject()
 } else {
-    sanitize(args)
+    let cleanArgs = sanitize(args)
+    if cleanArgs != (0,[0]) {
+        iterate(thru: cleanArgs.0, with: cleanArgs.1)
+    }
 }
 
 private func help() {
@@ -28,6 +31,35 @@ private func reject() {
 
 
 private func sanitize(_ args: [String]) -> (Int,[Int]) {
-    
-    return (1,[1,1,1,1])
+    if let backlog = Int(args[1]) {
+        let csv = args[2].components(separatedBy: ",")
+        return(backlog,csv.map(){Int($0) ?? 0}) //TODO: Not safe enough
+    }
+    return (0,[0])
+}
+
+private func iterate(thru backlog:Int, with history: [Int]) -> Void {
+    var results = [Int]()
+    for _ in 0..<iterations { //1. for loop on iterations, counter = 0
+        var thisBacklog = backlog
+        var result:Int = 0
+        while thisBacklog > 0 {
+            //2. get random number from 0 < args[1].length
+            let rando = Int.random(in: 0..<history.count)
+            //3. get value, subtract from args[0], == 0?
+            let value = history[rando]
+            thisBacklog -= value
+            //4. add 1 to counter
+            result += 1
+        }
+        results.append(result)
+    }
+    let thing = iterations/100
+    let fiftiethIndex = Int(thing * 50)
+    let twentyFifthIndex = Int(thing * 25)
+    let eightyFifthIndex = Int(thing * 85)
+    let sortedResults = results.sorted {$0 < $1}
+    print("25th Percentile: \(sortedResults[twentyFifthIndex])")
+    print("50th Percentile: \(sortedResults[fiftiethIndex])")
+    print("85th Percentile: \(sortedResults[eightyFifthIndex])")
 }
