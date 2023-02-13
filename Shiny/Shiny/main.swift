@@ -7,5 +7,8 @@
 
 import Foundation
 
+let args = CommandLine.arguments
 print("Hello, World!")
+print("You sent me \(args.count) thing\(args.count == 1 ? "" : "s")")
+
 
