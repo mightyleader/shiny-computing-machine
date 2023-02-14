@@ -4,6 +4,11 @@
 //
 //  Created by Robert Stearn on 13/02/2023.
 //
+//TODO: Add an optional Backlog Increase Factor starting at 1
+//TODO: Add a hard limit of 8 to the history used
+//TODO: Add optional risk factors
+//Syntax suggestion: $> shiny 10 2,3,5,1 1.8 0.5,3 0.7,5 0.1,2
+//Translation: $> shiny <backlog_size> <comma_separated_delivery_history> <backlog_increase_factor> <risk%_and_increase>
 
 import Foundation
 
