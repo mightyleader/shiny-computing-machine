@@ -1,4 +1,5 @@
 #Shiny
+
 Shiny is a command-line tool written in Swift. It's presented an Xcode project which is downloadable from the [Mac App Store](https://apps.apple.com/gb/app/xcode/id497799835?mt=12) or [Apple's Developer Site](developer.apple.com).
 It is also compilable from the command line using Xcode Command Line tools.
 
@@ -7,6 +8,7 @@ It operates initially on two pieces of data; the amount of tasks to be completed
 The 'units' of delivery and time are up to the user, as long as the backlog and delivery history concern themselves with the same things.
 
 For example:
+
 A company needs to build `100` cars and the they have historically delivered the following amount of cars per week: `2,10,8,7,3,5`. This uses the came unit, cars, in the backlog and the throughput history.
 
 
@@ -26,6 +28,7 @@ Translation  `shiny <backlog_size> <comma_separated_delivery_history>`
 ###Output
 
 Currently the tool, given correct input values will out the forecast chance of the backlog being delivered as a risk indicator, showing the time period in terms of the 25th, 50th and 85 percentile likelihood of the complete backlog being achieved like this:
+
 `25th Percentile: 3
 50th Percentile: 4
 85th Percentile: 5`
@@ -33,4 +36,5 @@ Currently the tool, given correct input values will out the forecast chance of t
 The number being the time unit referenced in the throughput data.
 
 ##Todo
+
 This is a basic implementation so far, the next set of features will be aiming to provide boundaries of uncertainty for growth of the scope and risk factors to the delivery. 
