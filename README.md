@@ -29,9 +29,9 @@ Translation  `shiny <backlog_size> <comma_separated_delivery_history>`
 
 Currently the tool, given correct input values will out the forecast chance of the backlog being delivered as a risk indicator, showing the time period in terms of the 25th, 50th and 85 percentile likelihood of the complete backlog being achieved like this:
 
-```25th Percentile: 3
+`25th Percentile: 3
 50th Percentile: 4
-85th Percentile: 5```
+85th Percentile: 5`
 
 The number being the time unit referenced in the throughput data.
 
