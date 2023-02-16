@@ -1,7 +1,7 @@
 #Shiny
 
 Shiny is a command-line tool written in Swift. It's presented an Xcode project which is downloadable from the [Mac App Store](https://apps.apple.com/gb/app/xcode/id497799835?mt=12) or [Apple's Developer Site](developer.apple.com).
-It is also compilable from the command line using Xcode Command Line tools.
+It is also compile-able from the command line using Xcode Command Line tools.
 
 Shiny aims to provide a proof of concept for a tool to use Monte Carlo simulation in forecasting delivery of work. 
 It operates initially on two pieces of data; the amount of tasks to be completed and the history of delivery for similar sized tasks.
@@ -29,9 +29,9 @@ Translation  `shiny <backlog_size> <comma_separated_delivery_history>`
 
 Currently the tool, given correct input values will out the forecast chance of the backlog being delivered as a risk indicator, showing the time period in terms of the 25th, 50th and 85 percentile likelihood of the complete backlog being achieved like this:
 
-`25th Percentile: 3
+```25th Percentile: 3
 50th Percentile: 4
-85th Percentile: 5`
+85th Percentile: 5```
 
 The number being the time unit referenced in the throughput data.
 
