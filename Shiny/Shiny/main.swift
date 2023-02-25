@@ -54,11 +54,15 @@ private func iterate(thru backlog:Int, with history: [Int]) -> Void {
             //3. get value, subtract from args[0], == 0?
             let value = history[rando]
             thisBacklog -= value
-            //4. add 1 to counter
+            //4. increment counter
             result += 1
         }
         results.append(result)
     }
+    output(results)
+}
+
+private func output(_ results: [Int]) -> Void {
     let thing = iterations/100
     let fiftiethIndex = Int(thing * 50)
     let twentyFifthIndex = Int(thing * 25)
